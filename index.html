@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project AudioPlayer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+</head>
+<body>
+    <div class="wrapper">
+        <audio class="player">
+            <source src="garik.mp3" type="audio/mpeg">
+        </audio>
+        <div class="player_track-name">
+            название дорожки
+        </div>
+        <div class="manage">
+            <i class="material-icons manage__play">play_arrow</i>
+            <div class="manage__current-time">00:00</div>
+                <input type="range" min="1" max='100' value="1" class="manage__progress_slider" id="progress">
+            <div class="manage__end-time">00:00</div>
+            <select class="manage__speed">
+              <option value="0.5">0.5X</option>
+              <option value="1">1X</option>
+              <option value="1.25">1.25X</option>
+              <option value="1.75">1.75X</option>
+              <option value="2">2X</option>
+              <option value="2.5">2.5X</option>
+            </select>
+            <i class="material-icons manage__volume">volume_up</i>
+            <i class="material-icons manage__save">vertical_align_bottom</i>
+            <i class="material-icons manage__save">vertical_align_top</i>
+        </div>
+    </div>
+</body>
+</html>
