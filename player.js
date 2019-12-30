@@ -1,3 +1,11 @@
+const start_player = document.getElementById("start_track")
+const close_player = document.getElementById("stop_track")
+
+start_player.onclick = () => {
+    let templ = document.getElementsByTagName("template")[0]
+    let clon = templ.content.cloneNode(true)
+    document.body.appendChild(clon)
+}
 // подключаем элементы управления и некоторые инициализируем
 let audio = document.querySelector("#audio_player")
 // путь к файлу
