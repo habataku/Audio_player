@@ -1,0 +1,18 @@
+html, body {height: 100%}
+body {margin: 0px;}
+.player_button {
+    font-family: Roboto;
+    font-size: 20px;
+    color: #404040;
+    width: 250px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.play_track {
+    font-size: 42px;
+    color: #08f;
+    margin-left: 20px;
+    cursor: pointer;
+}

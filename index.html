@@ -6,56 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project AudioPlayer</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" >
 </head>
 <body>
-    <ul class="track_list">
-        <li class="track">
-            Track_name
-             <i class="material-icons play_track" id="play_track">play_circle_outline</i>
-             <i class="material-icons play_track" id="stop_track">stop</i>
-        </li>
-    </ul>
+<!--название трека и кнопки запуска/закрытия плера-->
+    <p style="text-align: center">
+        <button class="player_button" id="open_player">Открыть плеер
+            <i class="material-icons play_track">play_circle_outline</i>
+        </button>
+    </p>
+    <div id="player_box"></div>
 <!--модуль плеера-->
-    <template>
-        <div class="wrapper">
-    <!--        движок аудиоплеера-->
-            <audio class="player" id="audio_player">
-                <source src="audio_files/Snoop_Dogg_The_Doors_-_Riders_on_the_storm.mp3" type="audio/mpeg" id="source">
-            </audio>
-    <!--        верхний блок с названием трека  регулятором громкости и логотипом-->
-            <div class="top-block">
-                <div class="player_track-name">
-                    <span style="word-break: break-all" id="title">трек</span>
-                </div>
-                <div class="block_volume-bar">
-                    <input type="range" min="1" max="100" value="50" class="manage__volume-bar hide" id="volume-bar">
-                </div>
-                <div>
-                    <img src="icon/icon.ico">
-                </div>
+<template id="player_template">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/player.css" >
+    <div class="wrapper">
+<!--        движок аудиоплеера-->
+        <audio class="player" id="audio_player">
+            <source src="audio_files/Snoop_Dogg_The_Doors_-_Riders_on_the_storm.mp3" type="audio/mpeg" id="source">
+        </audio>
+<!--        верхний блок с названием трека  регулятором громкости и логотипом-->
+        <div class="top-block">
+            <div class="player_track-name">
+                <span style="word-break: break-all" id="title">трек</span>
             </div>
-    <!--        нижний блок с элементами управления-->
-            <div class="manage">
-                <i class="material-icons manage__play" id="play">play_arrow</i>
-                <i class="material-icons manage__play hide" id="pause">pause</i>
-                <div class="manage__current-time" id="current-time">00:00</div>
-                    <input type="range" min="1" max='100' value="1" class="manage__progress_slider" id="progress">
-                <div class="manage__end-time" id="full-time">00:00</div>
-                <select class="manage__speed" id="speed">
-                  <option value="0.5">0.5X</option>
-                  <option value="1">1X</option>
-                  <option value="1.25">1.25X</option>
-                  <option value="1.75">1.75X</option>
-                  <option value="2">2X</option>
-                  <option value="2.5">2.5X</option>
-                </select>
-                <i class="material-icons manage__volume" id="volume">volume_up</i>
-                <i class="material-icons manage__save" id="download">vertical_align_bottom</i>
-                <i class="material-icons manage__save" id="upload">vertical_align_top</i>
+            <div class="block_volume-bar">
+                <input type="range" min="1" max="100" value="50" class="manage__volume-bar hide" id="volume_bar">
+            </div>
+            <div>
+                <img src="icon/icon.ico">
             </div>
         </div>
-    </template>
+<!--        нижний блок с элементами управления-->
+        <div class="manage">
+            <i class="material-icons manage__play" id="play">play_arrow</i>
+            <i class="material-icons manage__play hide" id="pause">pause</i>
+            <div class="manage__current-time" id="current_time">00:00</div>
+                <input type="range" min="1" max='100' value="1" class="manage__progress_slider" id="progress">
+            <div class="manage__end-time" id="full_time">00:00</div>
+            <select class="manage__speed" id="speed">
+              <option value="0.5">0.5X</option>
+              <option value="1">1X</option>
+              <option value="1.25">1.25X</option>
+              <option value="1.75">1.75X</option>
+              <option value="2">2X</option>
+              <option value="2.5">2.5X</option>
+            </select>
+            <i class="material-icons manage__volume" id="volume">volume_up</i>
+            <i class="material-icons manage__save" id="download">vertical_align_bottom</i>
+            <i class="material-icons manage__save" id="upload">vertical_align_top</i>
+        </div>
+    </div>
+</template>
 </body>
-<script src="player.js"></script>
+<script src="JS/main.js"></script>
 </html>
