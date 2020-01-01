@@ -1,8 +1,12 @@
+// обработчик - добавить новый плеер
 open_player.onclick = () => {
+    // создаем элемент в разметке для добавления в него плеера
     let clone = document.createElement('div')
     document.body.append(clone)
+    // создаем теневой DOM и добавляем в него шаблон плеера
     clone.attachShadow({mode: 'open'})
     clone.shadowRoot.append(player_template.content.cloneNode(true))
+    // запускаем функцию - обработчик событий плеера
     player(clone.shadowRoot)
 }
 
@@ -31,6 +35,7 @@ function player(elem) {
         full_time = elem.getElementById("full_time"),
         download = elem.getElementById("download"),
         upload = elem.getElementById("upload")
+    audio_player.currentTime = 1
 
 
     //запуск воспроизведения

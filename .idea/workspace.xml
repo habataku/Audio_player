@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e86a13f-a00a-4063-8665-69da7709f00a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CSS/player.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/player.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/player.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +90,7 @@
       <workItem from="1577606641262" duration="34686000" />
       <workItem from="1577719526276" duration="14642000" />
       <workItem from="1577804951980" duration="13188000" />
-      <workItem from="1577860451684" duration="19197000" />
+      <workItem from="1577860451684" duration="20355000" />
     </task>
     <task id="LOCAL-00001" summary="create Player">
       <created>1577727054657</created>
