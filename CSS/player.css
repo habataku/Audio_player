@@ -5,9 +5,9 @@
     font-style: normal;
 }
 .wrapper {
-    width: 420px;
+    width: 520px;
     height: 100px;
-    margin: 10px;
+    margin: 5px;
     background-color: #08f;
     border-radius: 7px;
     display: flex;
@@ -16,20 +16,27 @@
 }
 .top-block {
     display: flex;
-    padding: 10px;
+    padding: 8px;
+    color: white;
 }
 .player_track-name {
     width: 315px;
-    color: white;
-    overflow: hidden
+    overflow: hidden;
+    margin-right: 30px;
+    font-size: 18px;
 }
 .block_volume-bar {
     width: 85px;
     display: flex;
     align-content: space-between;
 }
+.player__close {
+    position: absolute;
+    margin-left: 480px;
+    cursor: pointer;
+}
 .manage {
-    width: 410px;
+
     display: flex;
     justify-content: space-around;
     align-items: center;

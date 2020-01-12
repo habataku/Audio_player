@@ -1,24 +1,40 @@
+// создаем кастом - элемент плеера с тегом <audio-player>
+customElements.define('audio-player',
+    class extends HTMLElement {
+        constructor() {
+            super();
+            const template = document.getElementById('player_template').content;
+            const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(document.importNode(template, true));
+        }
+        connectedCallback() {
+            player(this.shadowRoot);
+        }
+    }
+);
+
 // обработчик - добавить новый плеер
-open_player.onclick = () => {
-    // создаем элемент в разметке для добавления в него плеера
-    let clone = document.createElement('div')
-    document.body.append(clone)
-    // создаем теневой DOM и добавляем в него шаблон плеера
-    clone.attachShadow({mode: 'open'})
-    clone.shadowRoot.append(player_template.content.cloneNode(true))
-    // запускаем функцию - обработчик событий плеера
-    player(clone.shadowRoot)
-}
+open_player.onclick = function() {
+    let player_teg = document.createElement('audio-player');
+    player_box.append(player_teg);
+};
 
 // основная функция плеера
 function player(elem) {
-    // путь к файлу
-    let file_href = elem.getElementById('source').getAttribute("src")
-    // имя файла
-    let title = file_href.substring((file_href.lastIndexOf("/") + 1), file_href.length)
-     // имя трека без расширения файла
-    let track_name = title.substring(0, (title.lastIndexOf(".")))
-    elem.getElementById("title").textContent = track_name
+    let audio_player = elem.getElementById('audio_player');
+    let audio_file = elem.getElementById('audio_file');
+    // запуск инпута выбора файла
+    let file_open = elem.getElementById('file_open');
+    file_open.onclick = function() {
+        audio_file.click()
+    };
+    // добавление выбранного файла в плеер
+    audio_file.onchange = function() {
+        let files = this.files;
+        let file = URL.createObjectURL(files[0]);
+        elem.getElementById("title").textContent = files[0].name.substring(0, (files[0].name.lastIndexOf(".")));
+        audio_player.src = file;
+        play.click();
+    };
     let progress = elem.getElementById('progress')
     progress.value = 1
     let speed = elem.getElementById('speed')
@@ -26,8 +42,6 @@ function player(elem) {
     let volume_bar = elem.getElementById("volume_bar")
     volume_bar.style.display = 'none'
     volume_bar.value = 50
-    let audio_player = elem.getElementById("audio_player")
-    audio_player.volume = 50/100
     let play = elem.getElementById("play"),
         pause = elem.getElementById("pause"),
         volume = elem.getElementById("volume"),
@@ -37,17 +51,16 @@ function player(elem) {
         upload = elem.getElementById("upload")
     audio_player.currentTime = 1
 
-
     //запуск воспроизведения
-    play.onclick = () => {
+    play.onclick = function() {
         audio_player.play()
-        play.style.display = "none"
+        this.style.display = "none"
         pause.style.display = "block"
     }
     // пауза
-    pause.onclick = () => {
+    pause.onclick = function() {
         audio_player.pause()
-        pause.style.display = "none"
+        this.style.display = "none"
         play.style.display = "block"
     }
     //выбор скорости воспроизведения
