@@ -29,16 +29,18 @@ function player(elem) {
         audio_file.click()
     };
     // добавление выбранного файла в плеер
+    let file = '';
     audio_file.onchange = function() {
         let files = this.files;
-        let file = URL.createObjectURL(files[0]);
+        file = URL.createObjectURL(files[0]);
         if (files[0].name.substring(files[0].name.lastIndexOf("."), files[0].name.length) != '.mp3') {
             alert('неверный формат файла');
             return
         };
         elem.getElementById("title").textContent = files[0].name.substring(0, (files[0].name.lastIndexOf(".")));
         audio_player.src = file;
-            play.click();
+        play.click();
+        return file;
     };
     let progress = elem.getElementById('progress')
     progress.value = 1
@@ -58,9 +60,11 @@ function player(elem) {
 
     //запуск воспроизведения
     play.onclick = function() {
-        audio_player.play()
-        this.style.display = "none"
-        pause.style.display = "block"
+        if(audio_player.src) {
+            audio_player.play()
+            this.style.display = "none"
+            pause.style.display = "block"
+        }
     }
     // пауза
     pause.onclick = function() {
@@ -113,8 +117,8 @@ function player(elem) {
     download.onclick = () => {
         var link = document.createElement("a")
         link.contentType = "application/octet-stream"
-        link.download = title
-        link.href = file_href
+        link.download = elem.getElementById("title").textContent;
+        link.href = file;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

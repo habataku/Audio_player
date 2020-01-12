@@ -5,7 +5,7 @@
     font-style: normal;
 }
 .wrapper {
-    width: 520px;
+    width: 420px;
     height: 100px;
     margin: 5px;
     background-color: #08f;
@@ -19,20 +19,44 @@
     padding: 8px;
     color: white;
 }
-.player_track-name {
-    width: 315px;
-    overflow: hidden;
+.player__icon {
     margin-right: 30px;
-    font-size: 18px;
 }
+.player_track-name {
+    width: 240px;
+    height: 25px;
+    overflow: hidden;
+    margin-right: 5px;
+    font-size: 18px;
+    animation-play-state: paused;
+}
+.player_track-name span {
+    display:inline-block;
+    -webkit-animation: marquee 7s infinite linear;
+    animation: marquee 7s infinite linear;
+    white-space: pre;
+}
+@-webkit-keyframes marquee {
+    100%{-webkit-transform: translate(0, 0);}
+    100% {
+        -webkit-transform: translate(150%, 0);
+    }
+    0%{-webkit-transform: translate(-100%, 0)}
+}
+@keyframes marquee{
+    100%{transform: translate(0, 0);}
+    100% {
+        transform: translate(150%, 0);
+    }
+    0%{transform: translate(-100%, 0)}
+}
+
 .block_volume-bar {
-    width: 85px;
-    display: flex;
-    align-content: space-between;
+    width: 55px;
 }
 .player__close {
     position: absolute;
-    margin-left: 480px;
+    margin-left: 380px;
     cursor: pointer;
 }
 .manage {
