@@ -1,0 +1,12 @@
+{
+  "regions": ["hnd1"],
+  "builds": [
+    { "src": "JS/main.js","use": "@vercel/static" },
+    { "src": "fonts/roboto/**","use": "@vercel/static" },
+     { "src": "CSS/**","use": "@vercel/static" },
+    { "src": "*.json","use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/","dest": "index.html" }
+  ]
+}
